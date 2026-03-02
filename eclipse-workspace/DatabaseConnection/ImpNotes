@@ -1,0 +1,72 @@
+Q> What is a Database Server Session?
+:- A Database server session is temporary, logical connection between a client
+   and a database, enabling data exchange, queries, and transaction execution.
+  
+  it stores:
+  . User information
+  . Current transaction
+  . Locks
+  . Temporary data
+  . Cursor state
+  . Session variables
+  
+Q> What is Lock in DB?
+  :-  A Lock is a mechanism used by the database to control concurrent access to
+  data.
+  It prevents multiple users form modifying the same data at the same time.
+  
+  without locks:
+  Data corruption
+  Wrong final value
+  
+  So database applies lock.
+  
+ Q> What is Cursor?
+    A Cursor is a pointer used by database to process rows one by one.
+    It helps retrieve query result row-by-row. 
+    
+Q> Is it mandotary to close db connection?
+   Yes, because database connections are limited and expensive resources.
+   if we don't close it then several problem occurs like:-
+   1> Connection leak
+   2> Database become slow
+   3> Maximum connection limit exceeded
+   4> Application crash   
+   
+ ---------------------------------------------------------------------------------
+ 
+Q> What is Connection Pooling?
+
+first understand why this concept will came:-
+
+if we write code for geting connecction to db internally many thing happen like:-
+1> Network connection is created
+2> Authentication happens
+3> Session is created inside DB
+4> Memory allocated
+5> Server process created
+
+This is very costly operation (take time + resources).
+
+Now imagine:
+  .> 1000 users hitting your website
+  .> Each request creates new connection
+  .> Each request closes connecton
+ 
+Then what happens:-  
+  Database will become slow 
+  and too many ssessions occurs
+  System crash chance is high
+  
+  thats why conection pooling concept are came.
+  
+  Connection pooling:-
+        Connection Pooling is a technique where a group (pool) of database 
+        connections are created in advance and reused instead of creating
+        new connections every time.
+  
+ 
+ 
+ 
+  
+  
