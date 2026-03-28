@@ -12,6 +12,6 @@ This repository contains 21 JDBC programs covering:
 Technologies:
 - Java
 - JDBC
-- MySQL
+- SQL
 
 Author: Karan Singh
